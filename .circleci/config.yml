@@ -28,9 +28,11 @@ workflows:
           cluster-name: my-eks-demo
       - test-cluster:
           cluster-name: my-eks-demo
+          aws-region: us-west-2
           requires:
             - aws-eks/create-cluster
       - aws-eks/delete-cluster:
           cluster-name: my-eks-demo
+          aws-region: us-west-2
           requires:
             - test-cluster
